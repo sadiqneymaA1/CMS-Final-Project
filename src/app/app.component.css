@@ -1,0 +1,13 @@
+.mainContainer {
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    margin-left: 0;
+    padding: 0;
+}
+.head {
+    margin-right: 50px;
+}
+.container {
+    margin: 50px 10px;
+}

@@ -1,0 +1,47 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form id="contact-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="name">Task-name :</label>
+                    <input type="text" id="name" name="name" class="form-control required" size="120" max="120" [ngModel]="contact?.name" #name="ngModel" required />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="email">Task-Description:</label>
+                    <input type="text" id="email" name="email" class="form-control required" size="120" max="255" [ngModel]="contact?.email" #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required />
+                </div>
+                <div class="alert alert-danger" *ngIf="email.invalid && email.touched">Task-Start</div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="phone">Task-Start/End Date:</label>
+                    <input type="text" id="phone" name="phone" class="form-control invalid" size="150" max="255" [ngModel]="contact?.phone" #phone="ngModel" pattern="\D*([2-9]\d{2})(\D*)([2-9]\d{2})(\D*)(\d{4})\D*" />
+                </div>
+                <div class="alert alert-danger " *ngIf="phone.invalid && phone.touched ">Task-End-Date</div>
+            </div>
+
+            
+
+    
+
+            <div class="row">
+                <div class="alert alert-danger" *ngIf="(name.invalid && name.touched) || (email.invalid && email.touched)">
+                    The Name and Email are required fields.
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-12 btn-toolbar">
+                    <button class="btn btn-success" type="submit" [disabled]="!f.valid">Save-changes</button>
+                    <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

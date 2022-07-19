@@ -1,0 +1,72 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { ContactListComponent } from './contacts/contact-list/contact-list.component';
+import { ContactItemComponent } from './contacts/contact-item/contact-item.component';
+import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
+
+import {FormsModule} from "@angular/forms";
+import { DndModule } from 'ng2-dnd';
+//import{ DragDropModule }from '@angular/cdk/drag-drop';
+
+import { HeaderComponent } from './header/header.component';
+
+import { MessageEditComponent } from './messages/message-edit/message-edit.component';
+import { MessageItemComponent } from './messages/message-item/message-item.component';
+import { MessageListComponent } from './/messages/message-list/message-list.component';
+
+import { DocumentsComponent } from './documents/documents.component';
+import { DocumentListComponent } from './documents/document-list/document-list.component';
+import { DocumentItemComponent } from './documents/document-item/document-item.component';
+import { DocumentDetailComponent } from './documents/document-detail/document-detail.component';
+
+import{ DropdownDirective } from './dropdown.directive';
+//import { ContactService } from './contacts/contact.service';
+
+import { AppRoutingModule } from './app-routing.module';
+import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
+import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
+import { ContactsFilterPipe } from './contacts/contacts-filter.pipe';
+
+import { HttpClientModule } from '@angular/common/http';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+
+    ContactsComponent,
+    ContactListComponent,
+    ContactDetailComponent,
+    ContactItemComponent,
+    ContactsFilterPipe,
+
+    HeaderComponent,
+
+    MessageEditComponent,
+    MessageItemComponent,
+    MessageListComponent,
+
+    DocumentsComponent,
+    DocumentListComponent,
+    DocumentDetailComponent,
+    DocumentItemComponent,
+
+    DropdownDirective,
+     ContactEditComponent,
+     DocumentEditComponent,
+     ContactsFilterPipe,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule, 
+    DndModule.forRoot(),
+    HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
